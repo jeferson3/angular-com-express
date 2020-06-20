@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.hidded{
+    transition: 1s all;
+    opacity: 0;
+    
+}
+.actived{
+    transition: 1s all;
+    opacity: 1;
+}
+
+.alert{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+}
+.alert small{
+    font-size: max(9pt, 0.5vw);
+}
+
+.whatsapp{
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(69, 204, 69);
+    border-radius: 55px;
+    box-shadow: 0 0 10px 5px rgb(197, 197, 197);
+}
+.whatsapp .anel3{
+    border: 1px solid white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: spinner 2.2s infinite;
+    
+}
+.whatsapp .anel3 .anel2{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: spinner 2.1s infinite;
+
+}
+.whatsapp .anel3 .anel2 .anel1{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: spinner 2s normal;
+    
+}
+.whatsapp .anel3 .anel2 .anel1 .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    
+}
+
+@keyframes spinner{
+    from{
+        border: 1px solid white;
+    }
+    to{
+        border: none;
+
+    }
+}

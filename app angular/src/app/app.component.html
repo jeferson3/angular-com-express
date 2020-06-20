@@ -1,0 +1,81 @@
+<form autocomplete="on" class="form">
+  <div class="row justify-content-center">
+    <div class="col-sm-3 text-center m-3">
+      <div class="md-form">
+        <input mdbInput type="text" required id="form1" name="email" class="form-control" [(ngModel)]='form.email'>
+        <label for="form1">Email</label>
+      </div>
+    </div>
+    <div class="col-sm-3 m-3">
+      <div class="md-form">
+        <input mdbInput type="text" required id="form2" name="password" class="form-control"
+          [(ngModel)]='form.password'>
+        <label for="form2">Password</label>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center text-center">
+    <div class="col-sm-2" *ngIf='!BtnLoginState'>
+      <button type="button" mdbBtn color="primary" class="btn-sm" (click)='login(form)'
+        [disabled]='!form.email || !form.password' mdbWavesEffect>Login
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="col-sm-2" *ngIf='BtnLoginState'>
+      <button type="button" mdbBtn color="danger" class="btn-sm" (click)='logout()' mdbWavesEffect>Logout
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-3">
+      <div class="hidded" [ngClass]="{'actived':AlertLoginState.state, 'hidded':!AlertLoginState.state}">
+        <div class="alert alert-success" *ngIf='AlertLoginState.success'>
+          <i class="fa fa-check-circle" aria-hidden="true"></i>
+          <small>
+            Success
+          </small>
+        </div>
+        <div class="alert alert-danger" *ngIf='!AlertLoginState.success'>
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
+          <small>
+            Email or password wrong
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="row justify-content-center mt-1">
+  <div class="col-sm-5">
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let user of users; let i = index'>
+          <td>{{i}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="whatsapp">
+  <div class="anel3">
+    <div class="anel2">
+      <div class="anel1">
+        <div class="logo">
+          <i class="fa fa-whatsapp fa-2x" style="color: white;" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
