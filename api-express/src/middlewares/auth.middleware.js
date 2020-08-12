@@ -7,8 +7,6 @@ authMiddleware = async (req, res, next) => {
         const [, token] = req.headers.authorization.split(' ');
         
         let payload = verify(token);
-        console.log(payload);
-        
 
         await User.findOne({ where: { id: payload.user } }).then(data => {
             req.auth = data;
